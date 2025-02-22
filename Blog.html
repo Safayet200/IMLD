@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother Language Day.</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href='https://fonts.googleapis.com/css?family=Petrona' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <script>
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('#main'),
+            smooth: true
+        });
+    </script>
+    <style>
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; 
+            padding: 10px 40px;
+            background: rgb(212, 229, 255);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            margin: 0;
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(#9ecef5, #c7edff);
+            margin: 0px;
+            padding: 0px;
+            line-height: 1.8;
+            color: #333;
+            height: 100vh;
+        } 
+        #navbar {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            background-color: rgb(212, 229, 255);
+        }
+
+        #navbar li {
+            padding: 0 10px;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 1.5;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        #navbar li a::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #088178;
+            transition: width 0.3s ease;
+        }
+
+        #navbar li a:hover::before,
+        #navbar li a.active::before {
+            width: 100%;
+        }
+
+        #navbar li a:hover,
+        #navbar li a.active {
+            color: #088178;
+        }
+    </style>
+    <section id="header">
+        <a href="#"><img src="image/logo.png" class="logo" alt="" style="height: 50px;"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="History.html">History</a></li>
+                <li><a class="active" href="Blog.html">Blog</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="photo.html">Gallaery</a></li>
+            </ul>
+        </div>
+    </section>
+</head>
+<body>
+    <div id="main"></div>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+</body>
+</html>

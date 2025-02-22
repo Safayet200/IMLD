@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother Language Day.</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href='https://fonts.googleapis.com/css?family=Petrona' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+            document.addEventListener("contextmenu",function(e){
+                e.preventDefault()
+            },false)
+
+            var cursor = document.querySelector("#crs");
+
+            window.addEventListener("mousemove", function (dets) {
+                gsap.to(cursor, {
+                    x: dets.clientX,
+                    y: dets.clientY,
+                    duration: 0.7,
+                    ease: "easeInOut"
+                });
+            });
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+    <style>
+        #crs {
+            opacity: 35%;
+            height: 30px;
+            width: 30px;
+            background-color: rgb(0, 162, 255);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 10px 40px;
+            background: rgba(136, 227, 255, 0.767);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            margin: 0;
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            background-color: rgba(136, 227, 255, 0);
+        }
+
+
+        #navbar li {
+            padding: 0 10px;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 1.5;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        #navbar li a::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #003e49;
+            transition: width 0.3s ease;
+        }
+
+        #navbar li a:hover::before,
+        #navbar li a.active::before {
+            width: 100%;
+        }
+
+        #navbar li a:hover,
+        #navbar li a.active {
+            color: #003e49;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(#008cff, #7cd5ff);
+            margin: 0px;
+            padding: 0px;
+            line-height: 1.8;
+            color: #333;
+        } 
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #000000;
+        }
+        h2 {
+            color: #000000;
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+            text-align: justify;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 20px;
+            border: #00000000 solid;
+
+        } 
+        .martyr h1{        
+            font-family: "petrona";
+            font-size: 7vh;
+            margin-top: 0%;
+            margin-bottom: 1%;
+        }
+
+        .martyr {
+            max-width: 85%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(#acf5ff, #7ad5ff, #aecbff);
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            box-shadow: 10px 0px 100px 20px rgba(3, 107, 126, 0.534);
+        }
+        .m1{
+            display: flex;
+            flex-direction: column;
+        }
+        .st {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px; 
+            flex-wrap: wrap;         
+        }
+
+        .st img {
+            width: 20%; 
+            border: #000000 solid;
+            border-radius: 20px;
+            margin: 0; 
+        }
+
+        .st h4 {
+            flex: 1;
+            margin-top: 0;
+            font-family: "Inter", sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28.8px;
+            text-align: justify;
+            padding-right: 1vw;
+        }
+        .container {
+            max-width: 800px;
+            background: linear-gradient(#9ecef5, #c7edff);
+            margin: auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 10px 0px 100px 20px rgba(0, 0, 0, 0.1);
+        }
+        .container img{
+            border: #000000 solid;
+            border-width: 1px;
+        }
+        .logo{
+            margin: 0%;
+            padding: 0%;
+            width: 15%;
+            position: absolute;
+            top: 1%;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #acedff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #008cff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 20px;
+            position: relative;
+            background: #82dcff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            width: 45%;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            top: 20px;
+            right: -15px;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #008cff;
+        }
+
+        .timeline-item.left::after {
+            left: -15px;
+            right: auto;
+            border-width: 10px 15px 10px 0;
+            border-color: transparent #008cff transparent transparent;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item h2 {
+            font-size: 20px;
+            color: #008cff;
+        }
+
+        .timeline-item p {
+            font-size: 16px;
+            color: #333;
+        }
+
+
+        .timeline-item img {
+            display: none;
+            position: absolute;
+            top: 60%;
+            transform: translateY(-70%);
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item:hover img {
+            display: block;
+        }
+
+        .timeline-item.left:hover img {
+            left: calc(100% + 50px);
+        }
+
+        .timeline-item.right:hover img {
+            right: calc(100% + 60px);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin-top: auto;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .footerContainer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px 20px;
+        }
+
+        .socialIcons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding-bottom: 30px;
+        }
+
+        .socialIcons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ecf0f1;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .socialIcons i {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .socialIcons a:hover {
+            background-color: #3498db;
+            transform: translateY(-3px);
+        }
+
+        .socialIcons a:hover i {
+            color: #ecf0f1;
+        }
+
+        .footerNav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0;
+            margin: 0 0 30px;
+        }
+
+        .footerNav ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footerNav ul li a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+
+        .footerBottom {
+            background-color: #1a252f;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .footerBottom p {
+            color: #ecf0f1;
+            text-align: center;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .designer {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+
+        .fc{
+            display: flex;
+            justify-content:space-around;
+        }
+
+        .cont-us{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 100px;
+            margin-top: 40px;
+
+        }
+
+        .cont-us h2{
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .cont-us h4,
+        .cont-us h2,
+        .cont-us a {
+            margin: 0; 
+            padding: 0; 
+        }
+
+        .cont-us li {
+            display: flex;
+            align-items: center;
+        }
+
+        .cont-us li a {
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .cont-us li a:hover {
+            color: #ffffffd8;
+        }
+
+        .cont-us li .fa-envelope {
+            font-size: 16px; 
+            margin-right: 5px;
+            display: inline-block; 
+        }
+    </style>
+    <section id="header">
+        <a href="index.html"><img src="images/Logo_f_nav.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="History.html">History</a></li>
+                <li><a href="photo.html">Gallery</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+</head>
+<body id="cursor">
+    <div id="main">
+        <img src="images/imld.png" width="100%">
+        <div class="container" >
+            <h1>History of International Mother Language Day</h1>
+            
+            <p data-scroll data-scroll-speed="0.5">The history of International Mother Language Day dates back to the Bengali Language Movement of 1952 in present-day Bangladesh (formerly East Pakistan). After the partition of India in 1947, Pakistan was formed with two regions—West Pakistan and East Pakistan (now Bangladesh). The government of Pakistan attempted to impose Urdu as the only state language, neglecting the fact that the majority of the population in East Pakistan spoke Bengali.</p>
+            
+            <img src="images/bengali-language-protest.jpg" alt="Bengali Language Protest 1952">
+            
+            <h2>The Language Movement & Martyrs</h2>
+            <p data-scroll data-scroll-speed="0.5">On 21st February 1952, students from Dhaka University, Jagannath College, and Dhaka Medical College organized a protest demanding the recognition of Bengali as one of the state languages. The protest turned violent when police opened fire, killing students including Rafiq, Salam, Barkat, Jabbar, and Shafiur.</p>
+            
+            <img src="images/shaheed-minar.jpg" alt="Shaheed Minar - Language Martyrs Memorial">
+            
+            <h2>Recognition of Bengali Language</h2>
+            <p data-scroll data-scroll-speed="0.5">Due to continuous pressure and movements, in 1956, the Pakistan government declared Bengali as one of the official languages. However, the movement later became a crucial factor leading to the Bangladesh Liberation War in 1971, ultimately resulting in the independence of Bangladesh.</p>
+            
+            <h2>UNESCO’s Recognition</h2>
+            <p data-scroll data-scroll-speed="0.5">To honor this historical struggle, UNESCO declared 21st February as International Mother Language Day on 17th November 1999. Since 2000, this day has been observed worldwide to promote linguistic diversity and cultural identity.</p>
+            
+            <img src="images/unesco-mother-language-day.jpg" alt="UNESCO Recognizing Mother Language Day">
+            
+            <h2>Global Observance</h2>
+            <p data-scroll data-scroll-speed="0.5">Today, International Mother Language Day is celebrated in over 190 countries* emphasizing the importance of preserving languages and linguistic rights. People across the world pay tribute to language martyrs and raise awareness about the protection of indigenous languages.</p>
+            
+            <img src="images/language-day-tribute.jpg" alt="People Paying Tribute on 21st February">
+            
+            <h2>Conclusion</h2>
+            <p data-scroll data-scroll-speed="0.5">Language is a vital part of cultural identity, and the recognition of 'International Mother Language Day' reminds the world about the importance of linguistic diversity. The sacrifice of the language martyrs in 1952 not only gave Bangladesh its linguistic freedom but also contributed to the preservation of many other languages worldwide.</p>
+            
+            <img src="images/multilingual-world.jpg" alt="Flags Representing Linguistic Diversity">
+        </div>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <h2>1952</h2>
+                <p>The Bengali Language Movement begins.</p>
+                <img src="images/m2.jpg" alt="Bengali Language Protest 1952">
+            </div>
+            <div class="timeline-item right">
+                <h2>1956</h2>
+                <p>Bengali is recognized as one of the official languages of East Pakistan.</p>
+                <img src="images/language-bn.jpg" alt="Recognition of Bengali Language">
+            </div>
+            <div class="timeline-item left">
+                <h2>1971</h2>
+                <p>Bangladesh gains independence.</p>
+                <img src="images/History-Of-Bangladesh.jpg" style="width: 50%;">
+            </div>
+            <div class="timeline-item right">
+                <h2>1999</h2>
+                <p>UNESCO declares 21st February as International Mother Language Day.</p>
+                <img src="images/unesco-mother-language-day.jpg" alt="UNESCO Declaration">
+            </div>
+        </div>
+        <div class="martyr" >
+            <h1>Martyrs in the Language Movement.</h1>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%;" data-scroll data-scroll-speed="0.2"><u>Rafiq Uddin Ahmed</u></h1>
+                <div class="st" data-scroll data-scroll-speed="0.2">
+                    <img src="images/Rafiq_Uddin.jpg" alt="Rafiq Uddin Ahmed">
+                    <h4 >
+                        Rafiq Uddin Ahmed (1926-1952): Rafiq Uddin Ahmed, the eldest among five sons of Abdul Latif Miyan and Rafiza Khatun, was born on 30 October, 1926 at village Paril in Singair upazila of Manikganj district. From his childhood, Rafiq was distinguished as an encouraging, honest and patriotic social worker with passion for music and theatre. He staged and acted in various plays in the neighbouring villages.
+                        Rafiq passed matriculation from Baira School in 1949.
+                        While a student of Intermediate at Devendra College in Manikganj he discontinued his studies and moved to Dhaka. There he worked in his father's commercial printing business. In the meantime, he developed love relationship with his cousin Rahela Khanom Panu. Being informed, their parents organized their wedding. Accompanied by his nephew, Rafiq went to Dhaka for shopping for his forthcoming wedding.
+                        However, on 21 February 1952, the students of Dhaka University, Dhaka Medical College and other schools and colleges organized a procession                     
+                    </h4>
+                </div>
+                <div class="st" data-scroll data-scroll-speed="0.2">
+                    <h4> 
+                        in support of their demand for making Bangla one of the State Languages of Pakistan. Many mass people also joined the procession. Rafiq was one of them. On that day, although, he was scheduled to return home with his wedding shopping, he joined the protest rally, defying official ban on assemble of people imposed under Section 144, due to his love for Bangla language. The police opened fire on the demonstration in the premises of Dhaka Medical College Hostel. Rafiq was shot in the head and died at the spot. He is probably the first martyr of the language movement. His dead body was later dumped by the Pakistani commandos (who stole the dead bodies of language martyrs from Dhaka Medical college morgue) in the Azimpur grave yard. His grave could not be identified later. His love for his mother tongue surpassed his lifelong passion for his beloved Panu to whom he never returned as a groom.
+                    </h4>
+                </div>
+            </div>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%;"><u>Abdus Salam</u></h1>
+                <div class="st" data-scroll data-scroll-speed="0.2">
+                    <h4>
+                        Abdus Salam was born on 27 November, 1925 in the village Laxmanpur (at present ‘Salam Nagar’) under Dagonbhuiyan upazila in Feni district. His father was Munshi Abdul Fazel Miah and mother was Daulater Nesa. His father joined in the Second World War and worked in Basra of Iraq.
+                        Salam spent his early life in Laxmanpur village. He started primary education in Krishnarampur Primary School. Upon completion of primary level, he got admitted into Matubhuiyan Kalimullah Minor School (Matubhuiyan High School). He studied from grade six to eight in this school. Later he got admission in Dagonbhuiyan Ataturk High School. But he could not continue his study after grade ten because of financial scarcity.
+                        Getting determined to relieve his family out of poverty Salam went to Kolkata where he got shelter of his cousin’s husband Abdul Qader, who used to work in Kolkata port. Abdul Qader managed a job for Salam in the port establishments. In 1947, he moved to Dhaka and got a clerical job as a record keeper in the department of industries. As a member of the government ministerial staff, Salam got                     
+                    </h4>
+                    <img src="images/salam.jpg" alt="Abdus Salam" style="width: 22.5%;">
+                </div>
+                <div class="st" data-scroll data-scroll-speed="0.2">
+                    <h4>accommodation in Palasi Barrack at Azimpur.
+                        On 21 February 1952, Abdus Salam took part in the demonstration where, police fired brutally. Salam was shot and seriously injured. He was admitted to Dhaka Medical College and received treatment for about one and a half month. He passed away on 7 April, 1952.  Salam was buried in Azimpur graveyard.
+                    </h4>
+                </div>
+            </div>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%;"><u>Abul Barkat</u></h1>
+                <div class="st" data-scroll data-scroll-speed="0.2">
+                    <img src="images/barkat.jpg" alt="Abul Barkat" style="width: 22.5%;">
+                    <h4>
+                        Abul Barkat, nicknamed Abai, was born on 13 June (some say 16 June), 1927 at village Babla in Bharatpur thana of Murshidabad district. His father was Shamsuzzoha and mother Hasina Bibi. Barkat had his early education at Babla Primary School. He passed Matriculation examination from Talibpur High School in 1945 and Intermediate examination from Bahrampur Krishnanath College in 1947. After the partition of India he came to Dhaka in 1948. He obtained BA (Hon.) degree in Political Science from Dhaka University in 1951 and got himself admitted into MA final year.
+                        In 1952, Abul Barkat was in the procession that students mobilized on the premises of the Dhaka Medical College hostel on 21 February. When the police fired on the gathering, Barkat was seriously injured. He was immediately carried to the emergency ward of the Dhaka Medical College Hospital where he died at about 8 P.M. He was laid to rest in Azimpur graveyard.                     
+                    </h4>
+                </div>
+            </div>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%;"><u>Abdul Jabbar</u></h1>
+                <div class="st" data-scroll data-scroll-speed="0.2">
+                    <h4>
+                        Abdul Jabbar (1919-1952): Abdul Jabbar was born at village Panchua in Gafargaon thana of Mymensingh district on 26 Aswin 1326 BS (1919). He was the son of Hasan Ali and Safatun Nesa. Although he received his primary education in the local educational institution called pathsala (Dhopaghat Krishibazar Primary School), he failed to continue his education owing to poverty. Besides, he had to help his father with agriculture. But Jabbar was not satisfied and he left home to seek his fortune. He went to Narayanganj and met an Englishman who helped him to get a job in Burma (currently Myanmar). He learned English language there. He returned home after twelve years of service in Burma.
+                        After returning from Myanmar, Jabbar organized a village defense group, to support the language movement, with boys from the neighborhood and led the group as its commander. In 1949, he married Amina Khatun, sister of one of his friends and settled down. One and a half year after the marriage, Amina had a baby boy, who was named Nurul Islam Badol.
+                        A night before the historical incident of February 21, Jabbar came to Dhaka to get his         
+                    </h4>
+                    <img src="images/jabbar (2).jpg" alt="Abdul Jabbar" style="width: 22.5%;">
+                </div>
+                <div class="st" data-scroll data-scroll-speed="0.2">
+                    <h4>mother-in-law, a cancer patient, admitted into the Dhaka Medical College. On February 21, the huge procession and agitation of the students for the language movement made Jabbar interested to join them. Thus he participated in one of the rallies in which police opened fire and Jabbar was severely struck with a bullet.
+                        He was admitted into the Medical College Hospital where he breathed his last on the night following.
+                    </h4>
+                </div>
+            </div>
+            <div class="m1" >
+                <h1 style="font-family: petrona; margin-top: 0%;"><u>Shafiur Rahman</u></h1>
+                <div class="st" data-scroll data-scroll-speed="0.2">
+                    <img src="images/shafiur.jpg" alt="Shafiur Rahman">
+                    <h4>
+                        Shafiur Rahman was born on 24 January 1918 in Konnagar, Hooghly in West Bengal. His father, Hakim Mahbubur Rahman was a gazetted officer in Konnagar in undivided Bengal. Shafiur was the eldest son of his family.
+                        He passed Matriculation in 1937 from Konnagar High English School, now known as Konnagar High School. He took his Intermediate degree from the Government Commercial College of Kolkata. After the Partition of Bengal, when Muslims in India were given the option of living there or shifting to East Pakistan, his family preferred second one. Shafiur took a job in the accounts section of the Dhaka High Court and started to live with his only daughter, Asfia Khatoon.
+                        On 22 February 1952 while going to his job on his bicycle, he entered Nawabpur Road, which was full of protesters. He was shot in the back by a bullet and died after being taken to Dhaka Medical College. The authorities tried to bury his body as unidentified person, but later his family members managed to secure his body and he was buried in the middle of the night by the students of Dhaka Medical College, led by his brother who was a student of                
+                        Medical College back then, at the Azimpur Graveyard.
+                    </h4>
+                </div>                     
+            </div>
+            <h2 style="text-align: center; text-shadow: #333; font-family: petrona; margin-bottom: 20vh;">All of these five martyrs were awarded Ekushey Padak (posthumously) in 2000, in recognition of their sacrifices during the language movement.</h2>
+        </div>
+        <footer>
+            <div class="fc">    
+                <div class="footerContainer">
+                    <div class="socialIcons">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-google-plus"></i>
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="footerNav">
+                        <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="History.html">History</a></li>
+                        <li><a href="photo.html">Gallery</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cont-us">
+                    <h4>Contact Us</h4>
+                    <h2>+8801730789930</h2>
+                    <li>
+                        <i class="fa fa-envelope"></i><a href="mailto:tasjidhasansafayet@gmail.com">Email:tasjidhasansafayet@gmail.com</a>
+                    </li>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <p>Copyright &copy;2025 ; Designed by <span class="designer">TASZID HASAN SAFAYET</span></p>
+            </div>
+        </footer>
+    </div>
+    <div id="crs"></div>
+</body>
+</html>

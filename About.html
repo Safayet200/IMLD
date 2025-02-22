@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother Language Day.</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href='https://fonts.googleapis.com/css?family=Petrona' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+            document.addEventListener("contextmenu",function(e){
+                e.preventDefault()
+            },false)
+    
+            var cursor = document.querySelector("#crs");
+    
+            window.addEventListener("mousemove", function (dets) {
+                gsap.to(cursor, {
+                    x: dets.clientX,
+                    y: dets.clientY,
+                    duration: 0.7,
+                    ease: "easeInSite"
+                });
+            });
+        });
+    </script>
+    <style>
+        #crs {
+            opacity: 35%;
+            height: 30px;
+            width: 30px;
+            background-color: rgb(0, 162, 255);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(#008cff, #7cd5ff);
+            margin: 0; 
+            padding: 0;
+            line-height: 1.8;
+            color: #333;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 10px 40px;
+            background: rgb(212, 229, 255);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            margin: 0;
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            background-color: rgb(212, 229, 255);
+        }
+
+        #navbar li {
+            padding: 0 10px;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 1.5;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        #navbar li a::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #088178;
+            transition: width 0.3s ease;
+        }
+
+        #navbar li a:hover::before,
+        #navbar li a.active::before {
+            width: 100%;
+        }
+
+        #navbar li a:hover,
+        #navbar li a.active {
+            color: #088178;
+        }
+        .logo{
+            margin: 0%;
+            padding: 0%;
+            width: 15%;
+            position: absolute;
+            top: 1%;
+        }
+        .b2{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient( #acf5ff, #7ad5ff,#aecbff);
+            margin-top: 30px;
+            margin-left: 70px;
+            margin-right: 70px;
+            margin-bottom: 70px;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            box-shadow: 10px 0px 100px 20px rgba(3, 107, 126, 0.534);
+        }
+        .b2 h2{
+            font-family: "petrona";
+            font-size: 6vh;
+            margin-bottom: 0px;
+            color: #022031;
+        }
+        .b2 h4{
+            margin-top: 0px;
+            font-family: "inter";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 28.8px;
+            text-align: justify;
+            padding-right: 2vw;
+        }
+
+        .b2 img{
+            width: 20vw;
+            margin: 20px;
+            border: 2px solid black;
+            border-radius: 5%;
+        }
+
+        .m1h1{        
+            font-family: "petrona";
+            font-size: 7vh;
+            margin-top: 0%;
+            margin-bottom: 1%;
+        }
+
+        
+
+        .martyr {
+            max-width: 85%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(#acf5ff, #7ad5ff, #aecbff);
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            box-shadow: 10px 0px 100px 20px rgba(3, 107, 126, 0.534);
+        }
+        .m1{
+            display: flex;
+            flex-direction: column;
+        }
+        .st {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px; 
+            flex-wrap: wrap;         
+        }
+
+        .st img {
+            width: 20%; 
+            border: #000000 solid;
+            border-radius: 20px;
+            margin: 0; 
+        }
+
+        .st h4 {
+            flex: 1;
+            margin-top: 0;
+            font-family: "Inter", sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28.8px;
+            text-align: justify;
+            padding-right: 1vw;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin-top: auto;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .footerContainer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px 20px;
+        }
+
+        .socialIcons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding-bottom: 30px;
+        }
+
+        .socialIcons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ecf0f1;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .socialIcons i {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .socialIcons a:hover {
+            background-color: #3498db;
+            transform: translateY(-3px);
+        }
+
+        .socialIcons a:hover i {
+            color: #ecf0f1;
+        }
+
+        .footerNav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0;
+            margin: 0 0 30px;
+        }
+
+        .footerNav ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footerNav ul li a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+
+        .footerBottom {
+            background-color: #1a252f;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .footerBottom p {
+            color: #ecf0f1;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .designer {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+
+        .fc{
+            display: flex;
+            justify-content:space-around;
+        }
+
+        .cont-us{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 100px;
+            margin-top: 40px;
+
+        }
+
+        .cont-us h2{
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .cont-us h4,
+        .cont-us h2,
+        .cont-us a {
+            margin: 0; 
+            padding: 0; 
+        }
+
+        .cont-us li {
+            display: flex;
+            align-items: center;
+        }
+
+        .cont-us li a {
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .cont-us li a:hover {
+            color: #ffffffd8;
+        }
+
+        .cont-us li .fa-envelope {
+            font-size: 16px; 
+            margin-right: 5px;
+            display: inline-block; 
+        }
+
+    </style>
+    <section id="header">
+        <a href="index.html"><img src="images/Logo_f_nav.png" class="logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="History.html">History</a></li>
+                <li><a href="photo.html">Gallery</a></li>
+                <li><a class ="active"  href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                
+            </ul>
+        </div>
+    </section>
+</head>
+<body id="cursor">
+    <div id="main">
+        <div class="b2">
+            <div><img src="images/mm1.jpg"></div>
+            <div> 
+                <h2>About The Language Movement On 1952</h2>
+                <h4><b>In 1952, a momentous protest took place in East Pakistan (now Bangladesh) over the demand for Bengali to be recognized as a state language. This protest marked a tragic and significant chapter in the history of language and national identity. It was the only time in history when people laid down their lives in a struggle for language, which later became a defining moment for the Bengali language movement. These brave individuals, often referred to as the "Language Martyrs" or "Language Soldiers," sacrificed everything to protect and promote the importance of their mother tongue, Bengali. Their actions sparked a nationwide movement that eventually led to the establishment of Bengali as one of the state languages of Pakistan.
+                    Today, their legacy continues to be honored, with people remembering their courage and sacrifice. Here are some of the remarkable individuals who played a key role in this historic struggle for linguistic and cultural rights.</b></h4>
+            </div>
+        </div>
+        <div class="martyr">
+            <h1 class="m1h1">The language soldiers of bangladesh</h1>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%;"><u>Oli Ahad (1927–2012)</u></h1>
+                <div class="st">
+                    <img src="images/AhadOli.jpg" style="width: 15%;">
+                    <h4>
+                        Oli Ahad was a prominent Bangladeshi politician and language activist during the Bengali Language Movement. Born in Islampur village, Brahmanbaria District, he became involved in politics in the 1940s. He participated in the Language Movement, was arrested multiple times, and played a key role in organizing protests. Ahad also served as the editor of Ittehad and chaired the Democratic League party. He was awarded the Swadhinota Padak in 2004 for his contributions. He passed away on October 20, 2012​                     
+                    </h4>
+                </div>
+            </div>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%; margin-left: 67%;"><u>Abdul Motin (1926–2014)</u></h1>
+                <div class="st">
+                    <h4>
+                        Abdul Motin (1926 – 21 February 2014) was a Bangladeshi language activist and a prominent participant in the Bengali Language Movement. He was one of the student leaders who played a crucial role in organizing protests and rallies during the movement. He was born in 1926 in Faridpur, British India (now Bangladesh). He was a student at Dhaka University during the Language Movement and actively participated in the protests of 1952. He was arrested and imprisoned for his involvement in the movement. After the independence of Bangladesh, Abdul Motin continued to work for the development of the country and remained involved in politics. He was also a social worker and contributed to various educational and cultural initiatives. Abdul Motin passed away on 21 February 2014 in Dhaka, Bangladesh.                     
+                    </h4>
+                    <img src="images/abdul-motin.jpg" style="width: 22.5%;">
+                </div>
+            </div>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%;"><u>Kazi Golam Mahbub(1927-2006)</u></h1>
+                <div class="st">
+                    <img src="images/Kazi-golam.jpg" style="width: 22.5%;">
+                    <h4>
+                        Kazi Golam Mahbub (1927 – 13 February 2006) was a Bangladeshi language activist and a prominent student leader during the Bengali Language Movement of 1952. He played a significant role in organizing protests and demonstrations to demand the recognition of Bengali as a state language of Pakistan. Born in 1927 in Faridpur, British India (now Bangladesh), he was a student at Dhaka University during the Language Movement. Kazi Golam Mahbub was actively involved in the All-Party Central Language Action Committee and worked closely with other leaders to mobilize students and the public. After the Language Movement, he continued to contribute to the cultural and political development of Bangladesh. He passed away on 13 February 2006 in Dhaka, Bangladesh, and is remembered as a dedicated Language Soldier (Bhasha Sainik) who fought for the rights of the Bengali language and culture.
+                    </h4>
+                </div>
+            </div>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%; margin-left: 67%;"><u>Abdul Gofur (1929–2024)</u></h1>
+                <div class="st">
+                    <h4>
+                        Abdul Gofur (1929 – 27 September 2024) was a Bangladeshi journalist, teacher, writer, and language activist of the Bengali Language Movement. He was one of the noted members of Tamaddun Majlish, an Islamic cultural organization that played a vital role at the start of the movement. He was born on 19 February 1929 in Pangsha, Greater Faridpur District (now Rajbari District, Bangladesh). He completed his secondary education in 1945 and higher secondary education in 1947. He later studied Bengali language and literature at Dhaka University. During the Language Movement, Abdul Gofur actively participated in protests and rallies. He was also a journalist and writer, contributing to various newspapers and magazines. In recognition of his contributions to the Language Movement, he was awarded the Ekushey Padak by the Government of Bangladesh in 2005. Abdul Gofur passed away on 27 September 2024, at the age of 95.       
+                    </h4>
+                    <img src="images/Mohammad_Abdul_Gafur.jpg"  style="width: 22.5%;">
+                </div>
+            </div>
+            <div class="m1">
+                <h1 style="font-family: petrona; margin-top: 0%;"><u>Gaziul Haque(1929-2009)</u></h1>
+                <div class="st">
+                    <img src="images/gaziul-haq.jpg" >
+                    <h4>
+                        Gaziul Haque (9 February 1929 – 15 October 2009) was a Bangladeshi language activist, lawyer, and social worker. He was a prominent student leader during the Bengali Language Movement of 1952 and played a key role in organizing protests to demand recognition of Bengali as a state language of Pakistan. Born in Nandail, Mymensingh, British India (now Bangladesh), he studied law at the University of Dhaka. Gaziul Haque was actively involved in the All-Party Central Language Action Committee, which coordinated the movement. After 1952, he continued to advocate for social justice and human rights as a lawyer. He remained a vocal supporter of Bengali language and culture throughout his life. Gaziul Haque passed away on 15 October 2009 in Dhaka, Bangladesh, and is remembered as a Language Soldier (Bhasha Sainik) and a symbol of the Bengali nationalist movement.
+                    </h4>
+                </div>                     
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="fc">    
+            <div class="footerContainer">
+                <div class="socialIcons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-google-plus"></i>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="footerNav">
+                    <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="History.html">History</a></li>
+                    <li><a href="photo.html">Gallery</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cont-us">
+                <h4>Contact Us</h4>
+                <h2>+8801730789930</h2>
+                <li>
+                    <i class="fa fa-envelope"></i><a href="mailto:tasjidhasansafayet@gmail.com">Email:tasjidhasansafayet@gmail.com</a>
+                </li>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy;2025 ; Designed by <span class="designer">TASZID HASAN SAFAYET</span></p>
+        </div>
+    </footer>
+    <div id="crs"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

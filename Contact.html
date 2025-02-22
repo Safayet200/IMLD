@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother Language Day.</title>
+    <link rel="icon" type="image/png" href="images/Logo.png">
+    <link href='https://fonts.googleapis.com/css?family=Petrona' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+            document.addEventListener("contextmenu",function(e){
+                e.preventDefault()
+            },false)
+            var cursor = document.querySelector("#crs");
+    
+            window.addEventListener("mousemove", function (dets) {
+                gsap.to(cursor, {
+                    x: dets.clientX,
+                    y: dets.clientY,
+                    duration: 0.7,
+                    ease: "easeInSite"
+                });
+            });
+        });
+    </script>
+    <style>
+        #crs {
+            opacity: 35%;
+            height: 30px;
+            width: 30px;
+            background-color: rgb(0, 162, 255);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 10px 40px;
+            background: rgb(212, 229, 255);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            margin: 0;
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(#008cff, #7cd5ff);
+            margin: 0px;
+            padding: 0px;
+            line-height: 1.8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        } 
+        #navbar {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            background-color: rgb(212, 229, 255);
+        }
+
+        #navbar li {
+            padding: 0 10px;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a1a1a;
+            line-height: 1.5;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        #navbar li a::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: #088178;
+            transition: width 0.3s ease;
+        }
+
+        #navbar li a:hover::before,
+        #navbar li a.active::before {
+            width: 100%;
+        }
+
+        #navbar li a:hover,
+        #navbar li a.active {
+            color: #088178;
+        }
+        ::selection{
+            background-color: #71bfff;
+            color: #1a1a1a;
+        }
+        .contact-container{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .contact-left{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 20px;
+        }
+        .contact-left-title h2{
+            font-weight: 600;
+            color:#001242 ;
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+        .contact-left-title hr{
+            border: none;
+            width: 120px;
+            height: 5px;
+            background-color: #001242;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .contact-inputs{
+            width: 400px;
+            height: 50px;
+            border: none;
+            outline: none;
+            padding-left: 25px;
+            font-weight: 500;
+            color: #666;
+            border-radius: 50px;
+        }
+        .contact-left textarea{
+            height: 140px;
+            padding-top: 15px;
+            border-radius: 20px;
+        }
+        button {
+        width: 9em;
+        height: 3em;
+        border-radius: 30em;
+        font-size: 15px;
+        font-family: inherit;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 6px 6px 12px #c5c5c5,
+                    -6px -6px 12px #ffffff;
+        }
+
+        button::before {
+        content: '';
+        width: 0;
+        height: 3em;
+        border-radius: 30em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, #1a7ff3 0%, #aed1ff 100%);
+        transition: .5s ease;
+        display: block;
+        z-index: -1;
+        }
+
+        button:hover::before {
+        width: 9em;
+        }
+        .contact-inputs::placeholder {
+            color: #5870b4;
+        }
+        .contact-right img {
+            width: 500px;
+        }
+
+        .contact-left button img{ 
+            height: 15px;
+        }
+        .contact-right img{ 
+            width: 500px;
+        }
+        @media (max-width:800px) {
+            .contact-inputs{
+                width: 80vw;
+            }   
+            .contact-right{
+                display: none;
+            }
+        }
+        .logo{
+            margin: 0%;
+            padding: 0%;
+            width: 15%;
+            position: absolute;
+            top: 1%;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin-top: auto;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .footerContainer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px 20px;
+        }
+
+        .socialIcons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding-bottom: 30px;
+        }
+
+        .socialIcons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ecf0f1;
+            display: flex;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .socialIcons i {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .socialIcons a:hover {
+            background-color: #3498db;
+            transform: translateY(-3px);
+        }
+
+        .socialIcons a:hover i {
+            color: #ecf0f1;
+        }
+
+        .footerNav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0;
+            margin: 0 0 30px;
+        }
+
+        .footerNav ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .footerNav ul li a:hover {
+            color: #3498db;
+            text-decoration: underline;
+        }
+
+        .footerBottom {
+            background-color: #1a252f;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .footerBottom p {
+            color: #ecf0f1;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .designer {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+
+        .fc{
+            display: flex;
+            justify-content:space-around;
+        }
+
+        .cont-us{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-right: 100px;
+            margin-top: 40px;
+
+        }
+
+        .cont-us h2{
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .cont-us h4,
+        .cont-us h2,
+        .cont-us a {
+            margin: 0; 
+            padding: 0; 
+        }
+
+        .cont-us li {
+            display: flex;
+            align-items: center;
+        }
+
+        .cont-us li a {
+            font-size: 15px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .cont-us li a:hover {
+            color: #ffffffd8;
+        }
+
+        .cont-us li .fa-envelope {
+            font-size: 16px; 
+            margin-right: 5px;
+            display: inline-block; 
+        }
+    </style>
+        <section id="header">
+            <a href="index.html"><img src="images/Logo_f_nav.png" class="logo"></a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="History.html">History</a></li>
+                    <li><a href="photo.html">Gallery</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a class="active" href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </section>
+</head>
+<body id="cursor">
+    <div id="main">
+        <div class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                <div class="contact-left-title">
+                    <h2>Get in touch</h2>
+                    <hr>
+                </div>
+                <input type="hidden" name="access_key" value="64249f7d-06f6-4f14-aaf1-1255d32364dd">
+                <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required >
+                <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required >
+                <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="contact-right">
+                <img src="images/right_img.png" alt="">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="fc">    
+            <div class="footerContainer">
+                <div class="socialIcons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-google-plus"></i>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="footerNav">
+                    <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="History.html">History</a></li>
+                    <li><a href="photo.html">Gallery</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cont-us">
+                <h4>Contact Us</h4>
+                <h2>+8801730789930</h2>
+                <li>
+                    <i class="fa fa-envelope"></i><a href="mailto:tasjidhasansafayet@gmail.com">Email:tasjidhasansafayet@gmail.com</a>
+                </li>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy;2025 ; Designed by <span class="designer">TASZID HASAN SAFAYET</span></p>
+        </div>
+    </footer>
+    <div id="crs"></div>
+</body>
+</html>
