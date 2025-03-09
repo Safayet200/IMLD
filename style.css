@@ -698,46 +698,199 @@ footer {
 
 
 
-/* @media screen and (max-width: 768px) {
+/* General Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .logo {
+        width: 20%;
+    }
+
     .box1, .b2 {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .content {
         flex-direction: column;
-        margin: 2px;
-        padding: 5px;
-        text-align: center;
+        align-items: center;
     }
-    .language {
-        font-size: 1rem;
+
+    .box {
+        width: 80%;
+        margin-bottom: 20px;
     }
-} */
-@media screen and (max-width: 955px) {
-    .b2 {
+
+    .countries {
         flex-direction: column;
+        align-items: center;
     }
-    .b2-item {
-        flex: 1 1 100%;
+
+    .country {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .countdown-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .time-box {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .header{
-        display: flex;
-        justify-content: space-between;
+    .logo {
+        width: 25%;
     }
-    navbar{
-        display: flex;
-        justify-content: space-around;
-    }
-    
-    .content {
-        display: flex;
+
+    #navbar {
         flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar li {
+        padding: 10px 0;
+    }
+
+    .box1, .b2 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .h11 {
+        font-size: 35px;
+    }
+
+    .b2 h2 {
+        font-size: 5vh;
+    }
+
+    .b2 h4 {
+        font-size: 16px;
+    }
+
+    .quote-section {
+        padding: 20px;
+        margin: 0 20px 40px;
+    }
+
+    .quote .p1 {
+        font-size: 18px;
+    }
+
+    .quote .p2 {
+        font-size: 16px;
+    }
+
+    #page2 h1 {
+        font-size: 30vw;
+    }
+
+    .countdown-container {
+        padding: 10px;
+    }
+
+    .time-box {
+        padding: 10px;
+    }
+
+    .number {
+        font-size: 40px;
+    }
+
+    .label {
+        font-size: 16px;
+    }
+
+    .footerContainer {
+        padding: 30px 10px;
+    }
+
+    .footerNav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cont-us {
+        margin-right: 0;
         align-items: center;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .b2 {
-        padding: 10px;
+    .logo {
+        width: 30%;
+    }
+
+    .box1, .b2 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .h11 {
+        font-size: 28px;
+    }
+
+    .b2 h2 {
+        font-size: 4vh;
+    }
+
+    .b2 h4 {
+        font-size: 14px;
+    }
+
+    .quote-section {
+        padding: 15px;
+        margin: 0 10px 30px;
+    }
+
+    .quote .p1 {
+        font-size: 16px;
+    }
+
+    .quote .p2 {
+        font-size: 14px;
+    }
+
+    #page2 h1 {
+        font-size: 25vw;
+    }
+
+    .countdown-container {
+        padding: 5px;
+    }
+
+    .time-box {
+        padding: 5px;
+    }
+
+    .number {
+        font-size: 30px;
+    }
+
+    .label {
+        font-size: 14px;
+    }
+
+    .footerContainer {
+        padding: 20px 5px;
+    }
+
+    .footerNav ul {
+        gap: 10px;
+    }
+
+    .cont-us {
+        margin-top: 20px;
+    }
+
+    .cont-us h2 {
+        font-size: 18px;
+    }
+
+    .cont-us li a {
+        font-size: 14px;
     }
 }
-
