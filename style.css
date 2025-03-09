@@ -673,7 +673,7 @@ footer {
     margin: 50px auto;
 }
 .time-box {
-    background: #bbdefb; /* হালকা নীল */
+    background: #bbdefb; 
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -705,11 +705,6 @@ footer {
         padding: 15px;
         text-align: center;
     }
-
-    .country {
-        width: 45%;
-    }
-
     .language {
         font-size: 1rem;
     }
@@ -719,6 +714,10 @@ footer {
     .header{
         display: flex;
         justify-content: space-between;
+    }
+    navbar{
+        display: flex;
+        justify-content: space-around;
     }
     
     .content {
@@ -738,10 +737,6 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
     .b2 {
         padding: 10px;
     }
