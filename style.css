@@ -716,6 +716,11 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+    
     .content {
         display: flex;
         flex-direction: column;
