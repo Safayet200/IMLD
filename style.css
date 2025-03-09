@@ -2,7 +2,7 @@
 html, body {
     margin: 0;
 }
-/* Style the audio player container */
+
 .audio-player {
 
     display: flex;
@@ -22,11 +22,11 @@ html, body {
 .audio-player audio {
     cursor: pointer;
     z-index: 1;
-    width: 100%; /* Make the audio element take the full width */
-    border-radius: 50px; /* Round the audio element to match the capsule shape */
-    background-color: transparent; /* Transparent background */
-    border: none; /* Remove default borders */
-    outline: none; /* Remove outline on focus */
+    width: 100%;
+    border-radius: 50px;
+    background-color: transparent; 
+    border: none;
+    outline: none; 
 }
 
 
@@ -715,4 +715,55 @@ footer {
     font-weight: bold;
     color: #1565c0;
     margin-top: 5px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .box1, .b2 {
+        margin: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .country {
+        width: 45%;
+    }
+
+    .language {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 50px;
+    }
+
+    .box1 h1, .b2 h2 {
+        font-size: 24px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 90%;
+    }
+
+    .country {
+        width: 100%;
+    }
 }
