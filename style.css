@@ -725,27 +725,49 @@ footer {
     }
 }
 
-@media screen and (max-width: 480px) {
-    .logo {
-        width: 50px;
-    }
-
-    .box1 h1, .b2 h2 {
-        font-size: 24px;
-    }
-
-    .content {
+@media screen and (max-width: 768px) {
+    header {
         flex-direction: column;
+        text-align: center;
     }
-
-    .box {
-        width: 90%;
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .country {
-        width: 100%;
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .b2{
-        flex-direction: olumn;
+    
+    .b2 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .b2-item {
+        flex: 1 1 100%;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    header {
+        padding: 15px;
+    }
+    
+    nav ul {
+        gap: 5px;
+    }
+    
+    .b2 {
+        padding: 10px;
+    }
+}
+
