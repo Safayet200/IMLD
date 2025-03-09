@@ -727,13 +727,13 @@ footer {
 
 @media screen and (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
     }
     
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        justyfy-content: space-between;
     }
     
     .content {
