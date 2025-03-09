@@ -713,6 +713,9 @@ footer {
     .b2 {
         flex-direction: column;
     }
+    .b2-item {
+        flex: 1 1 100%;
+    }
 }
 
 @media screen and (max-width: 768px) {
