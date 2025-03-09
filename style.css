@@ -705,8 +705,8 @@ footer {
     }
 
     .box1, .b2 {
-        margin-left: 40px;
-        margin-right: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .content {
@@ -755,8 +755,8 @@ footer {
     }
 
     .box1, .b2 {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .h11 {
@@ -768,7 +768,7 @@ footer {
     }
 
     .b2 h4 {
-        padding:; 20px
+        padding: 20px;
         font-size: 16px;
     }
 
