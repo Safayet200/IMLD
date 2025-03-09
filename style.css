@@ -699,15 +699,8 @@ footer {
 
 
 @media screen and (max-width: 768px) {
-    #header {
-        flex-direction: column;
-        padding: 10px;
-    }
 
-    #navbar {
-        flex-direction: column;
-        text-align: center;
-    }
+
 
     .box1, .b2 {
         flex-direction: column;
@@ -726,15 +719,7 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    header {
-        flex-direction: row;
-        text-align: center;
-    }
-    
-    nav ul {
-        flex-direction: row;
-        justyfy-content: space-between;
-    }
+
     
     .content {
         display: flex;
@@ -757,10 +742,7 @@ footer {
         width: 100%;
         padding: 10px;
     }
-    
-    header {
-        padding: 15px;
-    }
+
     
     nav ul {
         gap: 5px;
