@@ -337,29 +337,7 @@ body {
     background-color: linear-gradient(#008cff, #7cd5ff);
 }
 
-/* .quote-section {
-    background-color: #61cde7; 
-    border-radius: 16px;
-    padding: 32px;
-    max-width: 600px;
-    text-align: center;
-    margin-bottom: 80px;
-    margin-left: 50%;
-}
 
-.quote p {
-    font-size: 20px;
-    color: white;
-    font-weight: 500;
-    margin-bottom: 16px;
-}
-
-.quote footer {
-    background-color: #61cde7;
-    color: #c7d2fe; 
-    font-size: 16px;
-    box-decoration-break: none;
-} */
 
 .quote-section {
     background: linear-gradient(135deg, #d0f0ff, #a3d5ff); /* Light blue gradient */
@@ -732,6 +710,7 @@ footer {
     }
 
     .box1, .b2 {
+        flex-direction: column;
         margin: 20px;
         padding: 15px;
         text-align: center;
@@ -765,5 +744,8 @@ footer {
 
     .country {
         width: 100%;
+    }
+    .b2{
+        flex-direction: olumn;
     }
 }
