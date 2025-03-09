@@ -709,6 +709,11 @@ footer {
         font-size: 1rem;
     }
 } */
+@media screen and (max-width: 955px) {
+    .b2 {
+        flex-direction: column;
+    }
+}
 
 @media screen and (max-width: 768px) {
     .header{
