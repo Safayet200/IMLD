@@ -701,8 +701,8 @@ footer {
 @media screen and (max-width: 768px) {
     .box1, .b2 {
         flex-direction: column;
-        margin: 20px;
-        padding: 15px;
+        margin: 2px;
+        padding: 5px;
         text-align: center;
     }
     .language {
