@@ -686,7 +686,7 @@ footer {
 .number {
     font-size: 50px;
     font-weight: bold;
-    color: #0d47a1; /* গাঢ় নীল */
+    color: #0d47a1; 
 }
 .label {
     font-size: 18px;
@@ -699,9 +699,6 @@ footer {
 
 
 @media screen and (max-width: 768px) {
-
-
-
     .box1, .b2 {
         flex-direction: column;
         margin: 20px;
@@ -719,8 +716,6 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-
-    
     .content {
         display: flex;
         flex-direction: column;
@@ -742,12 +737,6 @@ footer {
         width: 100%;
         padding: 10px;
     }
-
-    
-    nav ul {
-        gap: 5px;
-    }
-    
     .b2 {
         padding: 10px;
     }
